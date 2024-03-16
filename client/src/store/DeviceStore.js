@@ -8,7 +8,7 @@ export default class DeviceStore {
             {id: 3, name: 'Keyboard'},
             {id: 4, name: 'Headset'},
             {id: 5, name: 'Case'},
-            {id: 1, name: 'MousePad'}
+            { id: 1, name: 'MousePad'}
         ]
         this._brands = [
             {id: 1, name: 'Logitech'},
@@ -18,22 +18,28 @@ export default class DeviceStore {
             {id: 5, name: 'SteelSeries'}
         ]
         this._devices = [
-            //{id: 1, name: 'Alloy FPS Pro TKL', price: 10000, rating: 0, img: }
+            {id: 1, name: 'Alloy FPS Pro TKL', price: 10000, rating: 0, img: 'http://localhost:5000/7a425799-81bf-466d-96aa-d1cc31655e70.jpg'},
+            {id: 1, name: 'HS80 RGB wireless', price: 25000, rating: 0, img: 'http://localhost:5000/0c86a9cd-4706-40fc-a210-3dd465b79f06.jpg'}
         ]
         makeAutoObservable(this)
     }
 
-    setIsAuth(bool){
-        this._isAuth = bool
+    setTypes(types){
+        this._types = types
     }
-    setUser(user){
-        this._user = user
+    setBrands(brands){
+        this._brands = brands
     }
-
-    get isAuth(){
-        return this._isAuth
+    setDevices(devices){
+        this._devices = devices
     }
-    get user(){
-        return this._user
+    get types(){
+        return this._types
+    }
+    get brands(){
+        return this._brands
+    }
+    get devices(){
+        return this._devices
     }
 }
