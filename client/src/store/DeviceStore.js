@@ -8,7 +8,7 @@ export default class DeviceStore {
             {id: 3, name: 'Keyboard'},
             {id: 4, name: 'Headset'},
             {id: 5, name: 'Case'},
-            { id: 1, name: 'MousePad'}
+            {id: 6, name: 'MousePad'}
         ]
         this._brands = [
             {id: 1, name: 'Logitech'},
@@ -19,8 +19,10 @@ export default class DeviceStore {
         ]
         this._devices = [
             {id: 1, name: 'Alloy FPS Pro TKL', price: 10000, rating: 0, img: 'http://localhost:5000/7a425799-81bf-466d-96aa-d1cc31655e70.jpg'},
-            {id: 1, name: 'HS80 RGB wireless', price: 25000, rating: 0, img: 'http://localhost:5000/0c86a9cd-4706-40fc-a210-3dd465b79f06.jpg'}
+            {id: 2, name: 'HS80 RGB wireless', price: 25000, rating: 0, img: 'http://localhost:5000/0c86a9cd-4706-40fc-a210-3dd465b79f06.jpg'}
         ]
+        this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -33,6 +35,12 @@ export default class DeviceStore {
     setDevices(devices){
         this._devices = devices
     }
+    setSelectedType(type){
+        this._selectedType = type
+    }
+    setSelectedBrand(brand){
+        this._selectedBrand = brand
+    }
     get types(){
         return this._types
     }
@@ -41,5 +49,11 @@ export default class DeviceStore {
     }
     get devices(){
         return this._devices
+    }
+    get selectedType(){
+        return this._selectedType
+    }
+    get selectedBrand(){
+        return this._selectedBrand
     }
 }
