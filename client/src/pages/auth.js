@@ -75,8 +75,8 @@ const Auth = observer(() => {
                             </div>
                         }
                         <Button className="mt-3"
-                            variant={"outline-success"}
-                                on
+                            variant={"outline-success"}s
+                                onClick={click}
                         >
                             {isLogin ? 'Войти' : 'Регистрация'}
                         </Button>
