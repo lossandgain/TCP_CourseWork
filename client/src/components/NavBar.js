@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from "react-bootstrap/cjs/Button";
 import {observer} from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
-import {ADMIN_ROUTE, LOGIN_ROUTE} from "../utils/consts.";
+import {ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts.";
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
@@ -20,7 +20,10 @@ const NavBar = observer(() => {
     return (
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand href="#home">AIMbot Store</Navbar.Brand>
+                <Navbar.Brand
+                    href="#home"
+                    onClick={() => navigate(SHOP_ROUTE)}
+                >AIMbot Store</Navbar.Brand>
                 {user.isAuth ?
                     <Nav className="ml-auto" style={{color: 'white'}}>
                         <Button

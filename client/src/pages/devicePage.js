@@ -20,7 +20,7 @@ const DevicePage = () => {
         <Container className="mt-3">
             <Row>
             <Col md={4}>
-                    <Image width={300} height={300} src={process.env.REACT_APP_API_URL + '/' + device.img}/>
+                    <Image width={300} height={300} src={'http://localhost:5000/' + device.img}/>
             </Col>
             <Col md={4}>
                 <Row className="d-flex flex-column align-items-center">
